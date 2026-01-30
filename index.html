@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00d4ff">
     <title>Umer Abdali - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero-theme.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">Umer Abdali</div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -24,11 +31,17 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm Umer Abdali</h1>
-                <p class="hero-subtitle">Full Stack Developer | Web Designer | Problem Solver</p>
-                <p class="hero-description">I create beautiful, functional websites and applications</p>
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1>Hi, I'm Umer Abdali</h1>
+                    <p class="hero-subtitle">Full Stack Developer | Web Designer | Problem Solver</p>
+                    <p class="hero-description">I create beautiful, functional websites and applications</p>
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                </div>
+
+                <div class="hero-media" aria-hidden="false">
+                    <img src="assets/boy.svg" alt="Illustration of a boy using a laptop" class="hero-image" loading="lazy">
+                </div>
             </div>
         </div>
     </section>

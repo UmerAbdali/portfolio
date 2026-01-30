@@ -1,0 +1,55 @@
+/* hero-theme.css
+   Overrides and additional theme styles focused on the home hero.
+   Edit the --primary-* variables at the top to change the color combination.
+*/
+:root{
+  --primary-1: #00d4ff; /* teal/cyan */
+  --primary-2: #8d1313; /* purple */
+  --accent: #3371c2;    /* coral */
+  --text-light: #ffffff;
+}
+
+/* Hero with multi-color animated gradient */
+.hero{
+  position: relative;
+  color:var(--text-light);
+  background:linear-gradient(135deg,var(--primary-1),var(--primary-2) 45%,var(--accent));
+  background-size:300% 300%;
+  animation: gradientShift 12s ease infinite;
+  padding: 60px 0;
+  min-height: calc(80vh);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+} 
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.08),rgba(255,255,255,0.02));mix-blend-mode:overlay;pointer-events:none}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+.hero-content{padding:80px 0;max-width:760px}
+
+/* Hero layout: side-by-side media + content on larger screens */
+.hero-inner{width:100%;max-width:1100px;display:flex;align-items:center;gap:40px}
+.hero-media{flex:0 0 420px;}
+.hero-image{width:100%;height:auto;border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,0.35);background:rgba(255,255,255,0.02);display:block}
+.hero-content{flex:1;text-align:left}
+
+/* Responsive adjustments */
+@media (max-width: 900px){
+  .hero-inner{flex-direction:column;align-items:center;text-align:center}
+  .hero-media{width:80%;flex:0 0 auto;margin-top:20px}
+  .hero-content{padding:40px 0}
+}
+
+@media (max-width: 480px){
+  .hero-image{width:92%}
+  .hero-content{padding:20px 0}
+}
+
+/* Accent button styling */
+.btn-primary{color:var(--text-light);background:linear-gradient(90deg,#ff6b8a,#7b61ff,#00d4ff);box-shadow:0 6px 20px rgba(123,97,255,0.18);backdrop-filter:blur(4px);font-weight:700}
+
+/* Subtle navbar brand color to match theme */
+.nav-brand{color:var(--primary-2)}
+
+/* Improve contrast for hero text on mobile */
+@media (max-width:640px){.hero h1{font-size:1.8rem}}
